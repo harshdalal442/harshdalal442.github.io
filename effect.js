@@ -193,6 +193,9 @@ $('document').ready(function(){
 		msgLoop(0);
 		
 	});
+	$(this).fadeOut('slow').delay(3000).promise().done(function(){
+			$('#friends_message').fadeIn('slow');
+		});
 });
 
 
