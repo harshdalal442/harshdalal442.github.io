@@ -113,7 +113,7 @@ $('document').ready(function(){
 	$('#balloons_flying').click(function(){
 		$('.balloon-border').animate({top:-500},8000);
 		$('#b1,#b4,#b5,#b7').addClass('balloons-rotate-behaviour-one');
-		$('#b2,#b3,#b6').addClass('balloons-rotate-behaviour-two');
+		$('#b2,#b3,#b6,#b8').addClass('balloons-rotate-behaviour-two');
 		// $('#b3').addClass('balloons-rotate-behaviour-two');
 		// $('#b4').addClass('balloons-rotate-behaviour-one');
 		// $('#b5').addClass('balloons-rotate-behaviour-one');
@@ -151,7 +151,7 @@ $('document').ready(function(){
 	$('#wish_message').click(function(){
 		 vw = $(window).width()/2;
 
-		$('#b1,#b2,#b3,#b4,#b5,#b6,#b7').stop();
+		$('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8').stop();
 		$('#b1').attr('id','b11');
 		$('#b2').attr('id','b22')
 		$('#b3').attr('id','b33')
@@ -202,13 +202,22 @@ $('document').ready(function(){
 		}
 		
 		msgLoop(0);
-		
+		$('.cake').fadeOut('fast');
+		$(this).fadeOut('slow').delay(3000).promise().done(function(){
+            $('#friends_message').fadeIn('slow');
+        });
 	});
-	$(this).fadeOut('slow').delay(3000).promise().done(function(){
-			$('#friends_message').fadeIn('slow');
 
-			
-		});
+	$('#friends_message').click(function(){
+    		$(this).fadeOut('slow');
+
+            $('.cake').fadeOut('fast');
+
+    		$(this).fadeOut('slow').delay(3000).promise().done(function(){
+
+            });
+    	});
+
 });
 
 
