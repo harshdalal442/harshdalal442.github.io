@@ -191,7 +191,9 @@ $('document').ready(function(){
 				$("p:nth-child(49)").fadeOut('slow').promise().done(function () {
 					$('.cake').fadeIn('fast');
 				});
-				
+				$(this).fadeOut('slow').delay(10000).promise().done(function(){
+                            $('#friends_message').fadeIn('slow');
+                });
 			}
 			else{
 				msgLoop(i);
@@ -203,9 +205,6 @@ $('document').ready(function(){
 		
 		msgLoop(0);
 		$('.cake').fadeOut('fast');
-		$(this).fadeOut('slow').delay(3000).promise().done(function(){
-            $('#friends_message').fadeIn('slow');
-        });
 	});
 
 	$('#friends_message').click(function(){
